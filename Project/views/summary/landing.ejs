@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs') %>
+<h1>Welcome!</h1>
+<div>
+    <p>This application will help you with monitoring your daily health and wellbeing.</p>
+    <p>You can report twice a day, and you can see summaries of your wellbeing and how it has changed over time</p>
+</div>
+<div>
+<a href="/auth/login">Login!</a>
+</div>
+<div>
+<a href="/auth/registration">Register Here!</a>
+</div>
+<p> Yesterday: <%=yesterday %></p>
+<p> Today: <%=today %></p>
+<p> Trend: <%=trend %></p>
+
+<div>
+<a href="/behavior/summary">Press here to see weekly/monthly stats</a>
+</div>
+<div>
+<a href="/behavior/reporting">Report here!</a>
+</div>
+<%- include('../partials/loginInformation.ejs',{email: email}) %>
+
+<%- include('../partials/footer.ejs') %>

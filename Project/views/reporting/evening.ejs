@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs') %>
+<h1>Evening log!</h1>
+
+<%- include('../partials/errors.ejs',errors) %>
+
+<form method="POST" action="/behavior/reporting/evening">
+    <fieldset>
+    <label for='date'>Date: </label>
+    <input id="date"type="date" name="date" value="<%=date %>" />
+    <script> if(document.getElementById('date').valueAsDate === null){
+    document.getElementById('date').valueAsDate = new Date();
+    }</script>
+    <label for='exercise'>Time spent exercising in hours(decimal): </label>
+    <input type="number" step="0.01" name="exercise" value="<%=exercise%>"  >
+    <label for='study'>Time spend studying in hours (decimal): </label>
+    <input type="number" step="0.01" name="study" value="<%=study%>">
+    <label for='eating'>Quality of eating from 1 to 5: </label>
+    <input type="range" name="eating" min="1" max="5" value="<%=eating%>" >
+    <label for='mood'>General mood from 1 to 5: </label>
+    <input type="range" name="mood" min="1" max="5" value="<%=mood%>">
+    <input type="submit" value="Submit" />
+</fieldset>
+</form>
+<%- include('../partials/loginInformation.ejs',{email: email}) %>
+<%- include('../partials/footer.ejs') %>

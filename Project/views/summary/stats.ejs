@@ -1,0 +1,41 @@
+<%- include('../partials/header.ejs') %>
+<h1>Monthly Stats</h1>
+<p>Month number <%=month%> of <%=yearM %></p>
+<% if (!errorM){ %>
+<p> avarage time studying: <%=studyM  %> </p>
+<p> avarage time exercising: <%=exerciseM  %> </p>
+<p> avarage time sleeping: <%=sleepDM  %> </p>
+<p> avarage sleepquality: <%=sleepQM  %> </p>
+<p> avarage eatingscore: <%=eatingM %></p>
+<p> avarage mood: <%=moodM  %> </p>
+<% }else{ %>
+ <p><%= errorM  %> </p>
+<%}%>
+
+<h1>Weekly Stats</h1>
+<p> Week number <%=week%> of <%=yearW%></p>
+<% if (!errorW){ %> 
+<p> avarage time studying: <%=studyW  %> </p>
+<p> avarage time exercising: <%=exerciseW  %> </p>
+<p> avarage time sleeping: <%=sleepDW  %> </p>
+<p> avarage sleepquality: <%=sleepQW  %> </p>
+<p> avarage eatingscore: <%=eatingW %></p>
+<p> avarage mood: <%=moodW  %> </p>
+<% }else {%>
+    <p> <%=errorW  %> </p> 
+<% } %>
+<h1> Stats page: Choose a week or a month to see your stats</h1>
+<h2>Week number or Month number:</h2>
+<form method="POST" action="/behavior/summary">
+    <label for='weekNR'>Weeknumber: </label>
+<input type="week" name="weekNR">
+<label for='monthNR'>Month: </label>
+<input type="month" name="monthNR">
+<input type="submit" value="Submit" />
+</form>
+
+</form>
+
+<%- include('../partials/loginInformation.ejs',{email: email}) %>
+
+<%- include('../partials/footer.ejs') %>

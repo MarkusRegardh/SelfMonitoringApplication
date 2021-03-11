@@ -1,0 +1,13 @@
+<%- include('../partials/header.ejs') %>
+<h1> Choose morning/evening report</h1>
+<div>
+<%=morning%>
+<a href="/behavior/reporting/morning"> Report morning</a>
+</div>
+<div>
+    <%=evening%>
+<a href="/behavior/reporting/evening"> Report evening</a>
+</div>
+<%- include('../partials/loginInformation.ejs',{email: email}) %>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs') %>
+<h1>Morning log!</h1>
+
+<%- include('../partials/errors.ejs',errors) %> 
+
+<form method="POST" action="/behavior/reporting/morning">
+    <label for='date'>Date: </label>
+    <input id="date"type="date" name="date" value="<%=date %>" />
+    <script> if(document.getElementById('date').valueAsDate === null){
+        document.getElementById('date').valueAsDate = new Date();
+        }</script>
+    <label for='sleep'>How many hours did you sleep(decimal): </label>
+    <input type="number" step="0.01" name="sleep" value="<%=sleep %>" >
+    <label for='sleepQuality'>The quality of the sleep from 1 to 5: </label>
+    <input type="range" name="sleepQuality" min="1" max="5" value="<%=sleepQuality %>">
+    <label for='mood'>General mood from 1 to 5: </label>
+    <input type="range" name="mood" min="1" max="5" value="<%=mood %>">
+    <input type="submit" value="Submit" />
+</form>
+<%- include('../partials/loginInformation.ejs',{email: email}) %>
+
+<%- include('../partials/footer.ejs') %>
