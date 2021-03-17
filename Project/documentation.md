@@ -31,7 +31,7 @@ CREATE TABLE eveninglogs(
 );
 
 <h2>URL:</h2>
-https://wsdprojectmr.herokuapp.com/
+https://wsdprojectmr.herokuapp.com/ (does not work anymore)
 
 <h2>Guide to running:</h2>
 $Env:PGHOST=""<br>
